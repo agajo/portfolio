@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'l10n.dart';
+
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
     Key? key,
@@ -14,6 +16,10 @@ class MyDrawer extends StatelessWidget {
             child: null,
           ),
           AboutListTile(),
+          SwitchListTile(
+              title: Text(L10n.of(context)!.showsDeviceFrame),
+              value: true,
+              onChanged: (bool value) {}),
         ],
       ),
     );

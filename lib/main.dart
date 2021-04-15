@@ -32,10 +32,7 @@ class MyApp extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(4),
             child: Simulated.sample(
-              child: MaterialApp(
-                  theme: myTheme,
-                  onGenerateTitle: null, // TODO: L10n.of(context).appTitle
-                  home: const MainPage()),
+              child: const MainPage(),
             ),
           ),
         ],
