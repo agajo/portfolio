@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_test/flutter_test.dart' show TestWindow;
 
 import 'simulated.dart';
 
@@ -22,6 +26,7 @@ class FrameManager extends StatefulWidget {
       {required this.child, required this.showsDeviceFrameFirst});
   final Widget child;
   final bool showsDeviceFrameFirst;
+
   @override
   FrameManagerState createState() => FrameManagerState(
         showsDeviceFrame: showsDeviceFrameFirst,
@@ -38,8 +43,34 @@ class FrameManagerState extends State<FrameManager> {
     required this.showsDeviceFrame,
     required this.showsFrameSwitch,
   });
+
+  @override
+  initState() {
+    super.initState();
+    final trueWindow = WidgetsBinding.instance!.window;
+
+    trueDevicePixelRatio = trueWindow.devicePixelRatio;
+    trueViewPadding = trueWindow.viewPadding;
+    truePadding = trueWindow.padding;
+  }
+
   bool showsFrameSwitch;
   bool showsDeviceFrame;
+  late double trueDevicePixelRatio;
+  late WindowPadding trueViewPadding;
+  late WindowPadding truePadding;
+  void setShowsDeviceFrame({required bool doShow}) {
+    setState(() {
+      showsDeviceFrame = doShow;
+      if (!doShow) {
+        final window = WidgetsBinding.instance!.window as TestWindow;
+        window.devicePixelRatioTestValue = trueDevicePixelRatio;
+        window.viewPaddingTestValue = trueViewPadding;
+        window.paddingTestValue = truePadding;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return _StateContainer(

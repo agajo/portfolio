@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/frame_manager.dart';
 
 import 'l10n.dart';
 
@@ -31,8 +32,10 @@ class MyDrawer extends StatelessWidget {
           AboutListTile(),
           SwitchListTile(
               title: Text(L10n.of(context)!.showsDeviceFrame),
-              value: true,
-              onChanged: (bool value) {}),
+              value: FrameManager.of(context).showsDeviceFrame,
+              onChanged: (bool value) {
+                FrameManager.of(context).setShowsDeviceFrame(doShow: value);
+              }),
         ],
       ),
     );
