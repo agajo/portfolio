@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/frame_manager.dart';
 import 'package:portfolio/main_page.dart';
 import 'package:portfolio/drawer.dart';
 import 'package:portfolio/simulated.dart';
@@ -14,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = WidgetsBinding.instance!.window.physicalSize;
     final aspectRatio = size.width / size.height;
-    print(aspectRatio);
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Stack(
@@ -32,14 +32,10 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          aspectRatio > 2.0 / 3.0
-              ? const Padding(
-                  padding: EdgeInsets.all(4),
-                  child: Simulated.sample(
-                    child: MainPage(),
-                  ),
-                )
-              : const MainPage(),
+          FrameManager(
+            showsDeviceFrameFirst: aspectRatio > 2.0 / 3.0,
+            child: const MainPage(),
+          ),
         ],
       ),
     );
