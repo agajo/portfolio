@@ -29,13 +29,16 @@ class MyDrawer extends StatelessWidget {
             },
             arrowColor: Colors.transparent,
           ),
-          AboutListTile(),
+          ListTile(title: Text("profile page")), // TODO:l10n
+          ListTile(title: Text("sample app")), // TODO: l10n
+          ListTile(title: Text("change language")), // TODO: l10n
           SwitchListTile(
               title: Text(L10n.of(context)!.showsDeviceFrame),
               value: FrameManager.of(context).showsDeviceFrame,
               onChanged: (bool value) {
                 FrameManager.of(context).setShowsDeviceFrame(doShow: value);
               }),
+          const AboutListTile(),
         ],
       ),
     );

@@ -10,7 +10,10 @@ final _tempMyTheme = ThemeData.from(
       GoogleFonts.sawarabiGothicTextTheme(Typography.material2018().black),
 );
 
-final myTheme = _tempMyTheme.copyWith(primaryTextTheme: _primaryTextTheme);
+final myTheme = _tempMyTheme.copyWith(
+  primaryTextTheme: _primaryTextTheme,
+  cardTheme: _cardTheme,
+);
 
 // AppBar内で適用されるTextTheme
 // titleはheadline6, TabのtextはbodyText1にあるTextStyleが適用される
@@ -24,3 +27,5 @@ final _primaryTextTheme =
     ),
   ),
 );
+
+final _cardTheme = const CardTheme();
