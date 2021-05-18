@@ -12,7 +12,6 @@ class WorksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const TabPage(
       children: [
-        SizedBox(height: 16),
         Section(
           title: Text("作ったアプリ・サービス"),
           child: Text("平均計算機\n"

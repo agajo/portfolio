@@ -8,7 +8,6 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const TabPage(
       children: [
-        SizedBox(height: 16),
         Section(
           title: Text("name"),
           child: Text("岡 竜之介"),

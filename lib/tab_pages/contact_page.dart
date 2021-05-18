@@ -9,7 +9,6 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const TabPage(
       children: [
-        SizedBox(height: 16),
         Section(
           title: Text("mail"),
           child: Text("masanada@gmail.com"),

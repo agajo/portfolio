@@ -9,25 +9,21 @@ class Section extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: PageSize.of(context)!.boxConstraints.maxHeight,
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DefaultTextStyle(
-              style: Theme.of(context).textTheme.headline4!,
-              child: title,
-            ),
-            DefaultTextStyle(
-              style: Theme.of(context).textTheme.headline5!,
-              child: child,
-            ),
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          DefaultTextStyle(
+            style: Theme.of(context).textTheme.headline4!,
+            child: title,
+          ),
+          DefaultTextStyle(
+            style: Theme.of(context).textTheme.headline5!,
+            child: child,
+          ),
+        ],
       ),
     );
   }
