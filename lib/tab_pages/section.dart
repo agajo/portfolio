@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/fading.dart';
 
 class Section extends StatelessWidget {
   const Section({
@@ -15,6 +16,14 @@ class Section extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Fading(
+              child: Opacity(
+            opacity: 0.4,
+            child: Icon(
+              Icons.arrow_drop_up,
+              size: 200,
+            ),
+          )),
           DefaultTextStyle(
             style: Theme.of(context).textTheme.headline4!,
             child: title,
@@ -23,6 +32,14 @@ class Section extends StatelessWidget {
             style: Theme.of(context).textTheme.headline5!,
             child: child,
           ),
+          Fading(
+              child: Opacity(
+            opacity: 0.4,
+            child: Icon(
+              Icons.arrow_drop_down,
+              size: 200,
+            ),
+          )),
         ],
       ),
     );

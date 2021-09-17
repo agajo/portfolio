@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/fading.dart';
 import 'package:portfolio/tab_pages/section.dart';
 import 'package:portfolio/tab_pages/tab_page.dart';
 
