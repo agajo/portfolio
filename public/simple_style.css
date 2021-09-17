@@ -1,0 +1,40 @@
+body {
+  background-color: #fafaff;
+  max-width: 100vh;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  border: solid 0.1pt;
+
+  margin-bottom: 8pt;
+  margin-top: 8pt;
+  /* border-radius: 16px; */
+  overflow: hidden;
+}
+
+div.section_wrapper {
+  padding-right: 16pt;
+  padding-left: 16pt;
+}
+
+img {
+  border-radius: 64pt;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  background-color: #000011;
+  margin-top: 0pt;
+  color: #fafaff;
+  padding-left: 16pt;
+  padding-top: 8pt;
+  padding-bottom: 8pt;
+}
