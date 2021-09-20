@@ -1,6 +1,6 @@
 body {
   background-color: #fafaff;
-  max-width: 100vh;
+  max-width: 150vh;
   margin: auto;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -38,6 +38,7 @@ div.section_wrapper {
 }
 
 img {
+  max-width: 90vmin;
   border-radius: 128px;
 }
 
@@ -58,6 +59,10 @@ h1 {
   padding-top: 32px;
   padding-bottom: 32px;
   font-family: "Lobster", cursive;
-  font-size: 64px;
+  font-size: 10vmin;
   margin-bottom: 16px;
+}
+
+h2 {
+  line-height: 1.2em;
 }
